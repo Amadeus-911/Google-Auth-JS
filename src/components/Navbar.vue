@@ -1,12 +1,43 @@
 <template>
     <nav class="navbar">
       <div class="navbar-left">Test Google Login</div>
-      <div class="navbar-right">
+      <div class="navbar-right" v-if="isLoggedIn">
+        <a href="#" class="login-link" @click="logout">Logout</a>
+      </div>
+      <div class="navbar-right" v-if="!isLoggedIn">
         <router-link to="/login" class="login-link">Login</router-link>
       </div>
     </nav>
   </template>
   
+
+<script>
+
+
+export default{
+  name:'Navbar',
+  props:{
+    isLoggedIn: {
+        type: Boolean,
+        required: true
+      },
+  },
+  methods:{
+    logout(){
+      console.log('logging out')
+      this.$emit('update:is-logged-in', false);
+      localStorage.removeItem('imgUrl')
+      localStorage.removeItem('name')
+      localStorage.removeItem('email')
+      localStorage.removeItem('accessToken')
+      localStorage.setItem('isToken', false)
+
+    }
+  }
+
+}
+</script>
+
   <style>
   .navbar {
     display: flex;
