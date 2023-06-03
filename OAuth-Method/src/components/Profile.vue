@@ -1,7 +1,7 @@
 <template>
     <div class="user-profile">
         <div class="profile-picture">
-            <img v-if="name" :src="imageUrl" :alt="name" />
+            <img v-if="name" :src="imageUrl" />
         </div>
         <div class="profile-details">
             <h3>{{ name }}</h3>
