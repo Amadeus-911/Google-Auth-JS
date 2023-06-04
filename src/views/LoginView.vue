@@ -32,6 +32,7 @@
         name: 'login',
         beforeCreate() {
             const token = localStorage.getItem('token')
+            console.log(process.env.VUE_APP_)
             if (token) {
                 console.log('exe')
                 router.push('/')
@@ -45,7 +46,7 @@
             }
 
             google.accounts.id.initialize({
-                client_id: process.env.CLIENT_ID,
+                client_id: '1020136124385-i9is0ag7pr3hapsa97ac1u06horb932a.apps.googleusercontent.com',
                 callback: handleCredentialResponse,
             })
 
