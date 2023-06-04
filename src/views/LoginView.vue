@@ -30,7 +30,7 @@
 
     export default {
         name: 'login',
-        beforeMount() {
+        beforeCreate() {
             const token = localStorage.getItem('token')
             if (token) {
                 router.push('/')
