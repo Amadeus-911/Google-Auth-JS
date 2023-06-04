@@ -45,7 +45,7 @@
             }
 
             google.accounts.id.initialize({
-                client_id: '1020136124385-i9is0ag7pr3hapsa97ac1u06horb932a.apps.googleusercontent.com',
+                client_id: process.env.CLIENT_ID,
                 callback: handleCredentialResponse,
             })
 
