@@ -33,6 +33,7 @@
         beforeCreate() {
             const token = localStorage.getItem('token')
             if (token) {
+                console.log('exe')
                 router.push('/')
             }
         },
