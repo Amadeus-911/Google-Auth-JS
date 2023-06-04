@@ -30,6 +30,12 @@
 
     export default {
         name: 'login',
+        beforeMount() {
+            const token = localStorage.getItem('token')
+            if (token) {
+                router.push('/')
+            }
+        },
         mounted() {
             const handleCredentialResponse = (response) => {
                 console.log('Encoded JWT ID token: ' + response.credential)
